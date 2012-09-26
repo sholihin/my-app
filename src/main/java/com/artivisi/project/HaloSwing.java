@@ -1,23 +1,30 @@
+
 package com.artivisi.project;
-/* Container : 
-		untuk import Frame Pada Java : "import javax.swing.JFrame;"
-		untuk import Label Pada Java : "import javax.swing.JLabel;"
-*/
+
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JOptionPane;
+import javax.swing.JLabel;
 
 public class HaloSwing {
 	public static void main(String[] xx){
-		JFrame fr = new JFrame();  // untuk membuat frame
-		fr.setTitle("Halo Swing"); // untuk memberi judul pada frame
+		JFrame fr = new JFrame();                               
+		fr.setTitle("Halo Swing"); 		
 		
-		JLabel lbl = new JLabel("Halo Swing");
-		fr.getContentPane().add(lbl);
+		fr.setSize(200,200);
+		fr.setLocationRelativeTo(null);
+		fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		fr.setResizable(false);
+		
+		JPanel pnl = new JPanel();
+		JLabel lbl = new JLabel("Label Pada JPanel");
+		pnl.add(lbl);
+		fr.add(pnl);
 		
 		JOptionPane.showMessageDialog(null, "Halo Dialog");
 		
-		fr.setSize(200,200);
 		fr.setVisible(true);
+		
 	}
 }
